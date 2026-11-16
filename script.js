@@ -43,9 +43,9 @@ function desenharCambio() {
 
     MOEDAS.forEach(function (moeda) {
         const dado = cotacoes[moeda.chave];
-        const variacao = Number(dado.pctChange);
-        const classe = variacao >= 0 ? 'sobe' : 'desce';
-        const seta = variacao >= 0 ? '▲ ' : '▼ ';
+        const variacao = Number(Number(dado.pctChange).toFixed(2));
+        const classe = variacao > 0 ? 'sobe' : variacao < 0 ? 'desce' : 'neutro';
+        const seta = variacao > 0 ? '▲ ' : variacao < 0 ? '▼ ' : '● ';
 
         const card = criar('div', 'moeda');
         card.append(

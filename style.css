@@ -226,6 +226,10 @@ option {
     color: #ff6b81;
 }
 
+.neutro {
+    color: var(--texto);
+}
+
 .conversor {
     display: flex;
     flex-wrap: wrap;
