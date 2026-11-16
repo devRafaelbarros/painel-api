@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Câmbio e Clima | Rafael Barros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <h1>Painel de Câmbio e Clima</h1>
+        <p class="subtitulo">Dados reais da internet, consumidos com fetch</p>
+
+        <div class="abas">
+            <button class="aba ativa" data-aba="cambio">💱 Câmbio</button>
+            <button class="aba" data-aba="clima">🌤️ Clima</button>
+        </div>
+
+        <section id="cambio" class="painel ativo">
+            <div class="topo-painel">
+                <p id="cambio-hora" class="info"></p>
+                <button id="atualizar" class="btn-sec">↻ Atualizar</button>
+            </div>
+            <div id="cambio-cards" class="cards"></div>
+            <p id="cambio-msg" class="msg"></p>
+
+            <h2>Conversor para real</h2>
+            <div class="conversor">
+                <input type="number" id="valor" value="1" min="0" step="any" aria-label="Valor">
+                <select id="moeda" aria-label="Moeda">
+                    <option value="USDBRL">Dólar (USD)</option>
+                    <option value="EURBRL">Euro (EUR)</option>
+                    <option value="BTCBRL">Bitcoin (BTC)</option>
+                </select>
+                <span>=</span>
+                <strong id="resultado">—</strong>
+            </div>
+        </section>
+
+        <section id="clima" class="painel">
+            <form class="busca" id="form-clima">
+                <input type="text" id="cidade" placeholder="Digite uma cidade..." required aria-label="Cidade">
+                <button type="submit">Buscar</button>
+            </form>
+            <p id="clima-msg" class="msg"></p>
+            <div id="clima-resultado"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
